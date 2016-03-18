@@ -4,11 +4,11 @@
 
 <form>
   <p>Title:</p>
-  <input type="text" name="title" ng-value="titleInput"><br>
+  <input type="text" name="title" ng-model="titleInput"><br>
   <p>Author:</p>
-  <input type="text" name="author" ng-value="authorInput"><br>
+  <input type="text" name="author" ng-model="authorInput"><br>
   <p>Content:</p>
-  <textarea rows="10" cols="60" ng-value="contentInput"></textarea>
+  <textarea rows="10" cols="60" ng-model="contentInput"></textarea>
 </form>
 
 <button type="button" class="button" ng-click="addPost()">Add Post</button>
