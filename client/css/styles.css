@@ -1,8 +1,4 @@
-#poster h1 {
-    text-align: center;
-}
-
-#poster form {
+#poster {
     text-align: center;
 }
 
@@ -14,3 +10,16 @@
     width: 400px;
 }
 
+.button {
+    background-color: #fff;
+    border: 2px solid red;
+    color: purple;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    height: 50px;
+    width: 160px;
+}
+
+.button:active {
+    background-color: #d3d3d3;
+}
