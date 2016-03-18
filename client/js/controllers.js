@@ -2,10 +2,14 @@
 
 var controllers = angular.module('myApp.controllers', []);
 
-controllers.controller('postViewController', ['$scope', '$location', '$rootScope', function($scope, $location, $rootScope) {
+controllers.controller('postViewController', ['$scope', 'PostGetter', function($scope, PostGetter) {
+   
+    $scope.getPosts = function() {
+        PostGetter.query().then(function(posts) {
+            $scope.posts = posts;
+        })
+    }
     
 }]);
 
-controllers.controller('newPostController', ['$scope', '$location', '$rootScope', function($scope, $location, $rootScope) {
-    
-}]);
+
