@@ -23,3 +23,11 @@
 .button:active {
     background-color: #d3d3d3;
 }
+
+.page-header {
+    margin-top: -5px;
+}
+
+#poster {
+    margin-top: -20px;
+}

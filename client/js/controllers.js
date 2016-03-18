@@ -13,13 +13,24 @@ controllers.controller('postViewController', ['$scope', 'PostGetter', function($
 }]);
 
 
-controllers.controller('newPostController', ['$scope', 'PostGetter', function ($scope, PostGetter) {
+controllers.controller('newPostController', ['$scope', '$location', 'PostGetter', function ($scope, $location, PostGetter) {
+    $scope.clearForms = function () {
+        $scope.titleInput = '';
+        $scope.authorInput = '';
+        $scope.contentInput = '';
+    }
+    
     $scope.addPost = function() {
         var newPost = {
             title: $scope.titleInput,
             author: $scope.authorInput,
             content: $scope.contentInput
         }
-        PostGetter.save(newPost).$promise.then();
+        PostGetter.save(newPost).$promise.then(function () {
+            $scope.clearForms()
+        }
+        ).then(function () {
+         $location.path('/')   
+        });
     }
 }])
