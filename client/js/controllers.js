@@ -7,30 +7,40 @@ controllers.controller('postViewController', ['$scope', 'PostGetter', function($
     $scope.getPosts = function() {
         PostGetter.query().$promise.then(function(data) {
             $scope.posts = data;
-        })   
+        })
     }
     $scope.getPosts();
 }]);
 
 
-controllers.controller('newPostController', ['$scope', '$location', 'PostGetter', function ($scope, $location, PostGetter) {
-    $scope.clearForms = function () {
+controllers.controller('newPostController', ['$scope', '$location', 'PostGetter', function($scope, $location, PostGetter) {
+    $scope.clearForms = function() {
         $scope.titleInput = '';
         $scope.authorInput = '';
         $scope.contentInput = '';
     }
-    
+
     $scope.addPost = function() {
         var newPost = {
             title: $scope.titleInput,
             author: $scope.authorInput,
             content: $scope.contentInput
         }
-        PostGetter.save(newPost).$promise.then(function () {
+        PostGetter.save(newPost).$promise.then(function() {
             $scope.clearForms()
         }
-        ).then(function () {
-         $location.path('/')   
+        ).then(function() {
+            $location.path('/')
         });
     }
 }])
+
+controllers.controller('SinglePostControl', ['$scope', '$routeParams', 'PostGetter', function($scope, $routeParams, PostGetter) {
+    $scope.getPosts = function() {
+
+        PostGetter.get({ id: $routeParams.id }).$promise.then(function(data) {
+            $scope.post = data;
+        })
+    }
+    $scope.getPosts();
+}]);

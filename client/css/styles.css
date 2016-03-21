@@ -10,24 +10,67 @@
     width: 400px;
 }
 
-.button {
-    background-color: #fff;
-    border: 2px solid red;
-    color: purple;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    height: 50px;
-    width: 160px;
-}
-
 .button:active {
     background-color: #d3d3d3;
 }
 
 .page-header {
     margin-top: -5px;
+    text-align: center;
 }
 
 #poster {
     margin-top: -20px;
+}
+
+#blog-header h1 {
+    text-align: center;
+}
+
+.post-button {
+    background-color: #fff;
+    border: 2px solid red;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+}
+
+.post-button a {
+    color: black;
+    text-decoration: none;
+}
+
+.post-button:active {
+    background-color: #d3d3d3;
+}
+
+.post-button:hover {
+    color: red;
+}
+
+.add-button {
+    background-color: #fff;
+    border: 2px solid red;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    float: right;
+}
+
+.add-button:hover {
+    color: red
+}
+
+.add-button:active {
+    background-color: #d3d3d3;
+}
+
+.add-button:after {
+  content:"";
+  display:block;
+  clear:both;
 }

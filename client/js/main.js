@@ -11,6 +11,10 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/newpost.html',
             controller: 'newPostController'
         })
+        .when('/:id', {
+            templateUrl: 'views/singlepost.html',
+            controller: 'SinglePostControl'
+        })
         .otherwise({
             redirectTo: '/'
         });
