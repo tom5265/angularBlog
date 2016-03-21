@@ -6,7 +6,7 @@ controllers.controller('postViewController', ['$scope', 'PostGetter', function($
 
     $scope.getPosts = function() {
         PostGetter.query().$promise.then(function(data) {
-            $scope.posts = data.reverse();
+            $scope.posts = data;
         })
     }
     $scope.getPosts();
@@ -36,9 +36,9 @@ controllers.controller('newPostController', ['$scope', '$location', 'PostGetter'
 }])
 
 controllers.controller('SinglePostControl', ['$scope', '$routeParams', 'PostGetter', function($scope, $routeParams, PostGetter) {
+   var postId = $routeParams.id;
     $scope.getPosts = function() {
-
-        PostGetter.get({ id: $routeParams.id }).$promise.then(function(data) {
+        PostGetter.get({ id: postId }).$promise.then(function(data) {
             $scope.post = data;
         })
     }
