@@ -6,7 +6,7 @@ controllers.controller('postViewController', ['$scope', 'PostGetter', function($
 
     $scope.getPosts = function() {
         PostGetter.query().$promise.then(function(data) {
-            $scope.posts = data;
+            $scope.posts = data.reverse();
         })
     }
     $scope.getPosts();
