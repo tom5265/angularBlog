@@ -11,7 +11,7 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/newpost.html',
             controller: 'newPostController'
         })
-        .when('/:id', {
+        .when('/posts/:id', {
             templateUrl: 'views/singlepost.html',
             controller: 'SinglePostControl'
         })

@@ -37,6 +37,8 @@ controllers.controller('newPostController', ['$scope', '$location', 'PostGetter'
 
 controllers.controller('SinglePostControl', ['$scope', '$routeParams', 'PostGetter', function($scope, $routeParams, PostGetter) {
    var postId = $routeParams.id;
+   console.log('I need to get this blog post:');
+   console.log(postId);
     $scope.getPosts = function() {
         PostGetter.get({ id: postId }).$promise.then(function(data) {
             $scope.post = data;
